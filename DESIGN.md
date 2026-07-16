@@ -156,10 +156,23 @@ The Figma file defines seven gradient styles (Gradient-01 through Gradient-07). 
 - **Gradient-07 ({gradients.gradient-07}):** Green-to-blue (`linear-gradient(147.865deg, rgb(142,188,41) 53.108%, rgb(35,127,225) 102.38%)`). Used for milestone-to-brand transitions.
 
 ### System Background Images (Asset Synced)
-To establish deep textural environments, our layouts rely on actual visual PNG background styles located inside the repository at **`images/backgrounds/`** (to be shared with the team):
-- **BG-01 ({backgrounds.bg-01}):** The central workspace page background. Features deep blue starry gradients, layered at the canvas baseline.
-- **BG-02 ({backgrounds.bg-02}):** Reserved for the administrative or executive side navigation bar. Houses dark-textured graphics to separate sidebar layouts.
-- **BG-03 ({backgrounds.bg-03}):** Contextual container highlight. Embedded on glassmorphic card overlays during metrics presentations.
+To establish deep textural environments, our layouts rely on actual visual PNG background styles located inside the repository at **`images/backgrounds/`**. All seven backgrounds are soft-blurred gradient mesh images designed to sit behind glassmorphic panels without competing with foreground content.
+
+| Asset | File Path | Description | Typical Use Case |
+| :--- | :--- | :--- | :--- |
+| **BG-01** | `images/backgrounds/BG-01.png` | Vibrant green-to-blue mesh gradient with golden yellow accent. Cool, fresh, optimistic. | Central workspace page background; hero section backdrop for active dashboards. |
+| **BG-02** | `images/backgrounds/BG-02.png` | Deep royal blue with lime green and mustard gold curves. Airy, modern, calm. | Administrative or executive side navigation bar; dark-textured sidebar layouts. |
+| **BG-03** | `images/backgrounds/BG-03.png` | Warm earthy palette — pale golden yellow, olive green, soft orange. Low-saturation, cozy. | Contextual container highlight; glassmorphic card overlays during metrics presentations. |
+| **BG-04** | `images/backgrounds/BG-04.png` | Cool green-to-teal-to-deep-blue vertical gradient with soft blurred orb in lower right. Serene, natural. | Workspace hero banners; AI Debrief page background; strategy workspace headers. |
+| **BG-05** | `images/backgrounds/BG-05.png` | Bright sky blue transitioning to teal and emerald green with blurred organic shape. Uplifting, clean. | Home page hero banner; overview dashboard hero section. |
+| **BG-06** | `images/backgrounds/BG-06.png` | Warm golden-amber upper field fading to grassy green with a lime/teal blurred orb. Energetic, fresh. | Alert and notification hero sections; "What changed" summary banners; financial highlight surfaces. |
+| **BG-07** | `images/backgrounds/BG-07.png` | Minimalist warm off-white base with small cluster of soft pastel shapes (peach, blue, lime) in bottom-right corner. Airy, gentle. | Light-mode canvas background for content-heavy pages; subtle backdrop behind translucent panels where minimal visual interference is required. |
+
+**Usage rules:**
+- Reference backgrounds in CSS via relative path: `background-image: url('images/backgrounds/BG-XX.png');`
+- Always pair with `background-size: cover; background-position: center; background-repeat: no-repeat;`
+- When using a background image behind a panel, apply the panel's glassmorphic properties (`backdrop-filter`, translucent bg, border) on top — the background image provides the color texture, the panel provides readability.
+- Background images are **never** used as solid fills — they always sit behind a translucent or semi-translucent layer.
 
 ## Typography
 
